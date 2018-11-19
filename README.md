@@ -1,39 +1,13 @@
 # vue-micro-frontends-template
 
-## Project setup
-```
-yarn install
-```
+## 构建目标
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+1. 子项目不输出任何 HTML 页面，只输出资源文件
+2. 主项目不包含业务，只为子项目提供注册，合并等功能
+3. 主项目根据路由变更自动加载子项目生成的资源文件
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+## 构建思路
 
-### Run your tests
-```
-yarn run test
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+1. 通过`vue-cli-service build --target lib --name myLib [entry]`命令将子项目打包成 umd 模块
+2. 使用 vue-router 的`router.addRoutes`动态添加路由规则
+3. 使用 Vuex.Store 的`registerModule`方法注册动态模块
