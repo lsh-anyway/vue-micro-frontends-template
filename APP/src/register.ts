@@ -1,5 +1,4 @@
-const modules = require('./config/modules.json');
-import axios from 'axios';
+const modules = require('../modules.json');
 
 modules.forEach((val:string) => {
     const script = document.createElement('script');
@@ -9,6 +8,6 @@ modules.forEach((val:string) => {
     script.onerror = () => {
         console.log(`找不到${val}模块`);
     };
-    script.src = `/${val}/app.js`;
+    script.src = process.env.NODE_ENV === 'development' ? `../${val}/app.js` : `../${val}/app.umd.js`;
     document.body.appendChild(script);
 });

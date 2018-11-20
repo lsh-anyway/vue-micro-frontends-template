@@ -1,9 +1,11 @@
+const config = require('../../config.json');
+
 export default [
     {
-        path: '/subpage',
-        name: 'subpage',
+        path: `/${config.name}`,
+        name: `${config.name}`,
         component:() => import(/* webpackChunkName: "about" */ '../page.vue'),
-        redirect: '/subpage/about',
+        redirect: `/${config.name}/about`,
         children: [
             {
                 path: 'about',

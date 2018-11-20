@@ -3,6 +3,7 @@ import module from './store/index';
 import VueRouter from "vue-router";
 import {Store} from "vuex";
 
+const config = require('../config.json');
 const {router, store} = window;
 
 declare global {
@@ -13,4 +14,4 @@ declare global {
 }
 
 router.addRoutes(routes);
-store.registerModule('', module);
+store.registerModule(config.name, module);
