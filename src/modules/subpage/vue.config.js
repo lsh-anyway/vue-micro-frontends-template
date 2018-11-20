@@ -14,7 +14,7 @@ const resolve = dir => path.join(__dirname, dir);
 const fileDir = process.argv[6] || process.argv.slice(3);
 
 module.exports = {
-    baseUrl: `${baseURI}`, // 根域上下文目录
+    baseUrl: `subpage`, // 根域上下文目录
     outputDir: `dist/${fileDir}`, // 构建输出目录
     // pages: {
     //     index: {
@@ -53,7 +53,7 @@ module.exports = {
             'element-ui': 'ELEMENT',
             vuex: 'Vuex',
             'vue-router': 'VueRouter',
-            // axios: 'axios',
+            axios: 'axios',
         };
     },
 
@@ -79,16 +79,12 @@ module.exports = {
     },
     parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
     devServer: {
-        publicPath: '/',
-        open: true,
+        publicPath: '/subpage',
+        open: false,
         host: '0.0.0.0',
-        port: 8000,
+        port: 7900,
         https: false,
         hotOnly: false,
-        proxy: {
-            '/subpage': {
-                target: 'http://localhost:7900',
-            }
-        },
+        before: (app) => {},
     },
 };
