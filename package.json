@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "setup": "node install.js",
     "serve": "node serve.js",
     "build": "node build.js",
     "gen": "node generate.js",
