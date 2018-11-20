@@ -2,7 +2,7 @@
  * @Author: linshuohao
  * @Date: 2018-11-19 22:49:44
  * @Last Modified by: linshuohao
- * @Last Modified time: 2018-11-20 22:29:34
+ * @Last Modified time: 2018-11-21 01:21:05
  */
 const path = require('path');
 const isDev = process.env.NODE_ENV !== 'production';
@@ -60,7 +60,7 @@ module.exports = {
         publicPath: '/',
         open: true,
         host: '0.0.0.0',
-        port: 8080,
+        port: 6000,
         https: false,
         hotOnly: false,
         proxy,

@@ -26,7 +26,8 @@ if (names.length === 0) {
             console.log(`模块${name}已存在`)
         } else {
             console.log(`开始创建模块${name}`);
-            const port = modules.next++;
+            const port = modules.next;
+            modules += 10;
             const module = {
                 name,
                 port

@@ -2,7 +2,7 @@
  * @Author: linshuohao
  * @Date: 2018-11-19 22:49:44
  * @Last Modified by: linshuohao
- * @Last Modified time: 2018-11-20 22:13:05
+ * @Last Modified time: 2018-11-21 01:56:31
  */
 const path = require('path');
 const isDev = process.env.NODE_ENV !== 'production';
@@ -13,7 +13,7 @@ const resolve = dir => path.join(__dirname, dir);
 
 module.exports = {
     baseUrl: config.name, // 根域上下文目录
-    outputDir: resolve(`../dist/${config.name}`), // 构建输出目录
+    outputDir: resolve(`../../dist/${config.name}`), // 构建输出目录
     assetsDir: 'static', // 静态资源目录 (js, css, img, fonts)
     lintOnSave: false, // 是否开启eslint保存检测，有效值：ture | false | 'error'
     runtimeCompiler: true, // 运行时版本是否需要编译
