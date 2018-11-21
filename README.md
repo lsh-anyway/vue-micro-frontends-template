@@ -32,5 +32,10 @@ yarn gen [name]
 yarn rm [name]
 ```
 
+### 重命名子项目
+```
+yarn rename [oldName] [newName]
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

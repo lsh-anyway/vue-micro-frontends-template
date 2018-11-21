@@ -27,7 +27,7 @@ if (names.length === 0) {
         } else {
             console.log(`开始创建模块${name}`);
             const port = modules.next;
-            modules += 10;
+            modules.next += 10;
             const module = {
                 name,
                 port

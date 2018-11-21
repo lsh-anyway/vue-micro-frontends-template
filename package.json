@@ -7,7 +7,8 @@
     "serve": "node serve.js",
     "build": "node build.js",
     "gen": "node generate.js",
-    "rm": "node remove.js"
+    "rm": "node remove.js",
+    "rename": "node rename.js"
   },
   "devDependencies": {
     "minimist": "^1.2.0"
