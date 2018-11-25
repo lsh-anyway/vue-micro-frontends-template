@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "setup": "node install.js",
-    "serve": "node serve.js",
-    "build": "node build.js",
-    "gen": "node generate.js",
-    "rm": "node remove.js",
-    "rename": "node rename.js"
+    "setup": "node task.js --task init",
+    "serve": "node task.js --task serve",
+    "build": "node task.js --task build",
+    "gen": "node task.js --task generate",
+    "rm": "node task.js --task remove",
+    "rename": "node task.js --task rename"
   },
-  "devDependencies": {
+  "dependencies": {
+    "fuzzy": "^0.1.3",
+    "inquirer": "^6.2.0",
+    "inquirer-autocomplete-prompt": "^1.0.1",
+    "inquirer-checkbox-plus-prompt": "^1.0.1",
     "minimist": "^1.2.0"
   }
 }
