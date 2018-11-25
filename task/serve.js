@@ -7,7 +7,7 @@ const fuzzy = require('fuzzy');
 
 const modules = require('../config/modules');
 
-const probe = require('../probe');
+const probe = require('./probe');
 const resolve = (...argvs) => path.join(__dirname, ...argvs);
 inquirer.registerPrompt('autocomplete', require('inquirer-autocomplete-prompt'));
 
