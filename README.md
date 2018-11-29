@@ -21,7 +21,7 @@ yarn serve
 yarn build
 ```
 
-### 新增子项目（可一次新增多个子项目，用空格分隔项目名，自动安装依赖）
+### 新增子项目
 
 ```bash
 yarn gen

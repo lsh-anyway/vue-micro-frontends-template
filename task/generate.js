@@ -58,6 +58,7 @@ class Generate {
             console.log(`正在安装模块${name}依赖`);
             child_process.spawn('cnpm', ['i'], {
                 cwd: resolve('modules', name.toString()),
+                shell: true,
             });
         })
     };

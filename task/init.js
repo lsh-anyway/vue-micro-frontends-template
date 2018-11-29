@@ -7,11 +7,12 @@ const {
 
 const resolve = (...argvs) => path.join(__dirname, ...argvs);
 
-const modules = fs.readdirSync(resolve('modules'));
+const modules = fs.readdirSync(resolve('../modules'));
 
 const install = (name, target) => {
   const process = spawn('cnpm', ['i'], {
-    cwd: target
+    cwd: target,
+    shell: true,
   });
   process.stdout.on('data', (data) => {
     console.log(`${name}-stdout: ${data}`);
@@ -26,7 +27,8 @@ const install = (name, target) => {
   });
 };
 
-install('APP', resolve('APP'));
-modules.forEach(module=> {
-  install(module, resolve('modules', module));
+console.log('开始安装依赖');
+install('APP', resolve('../APP'));
+modules.forEach(module => {
+  install(module, resolve('../modules', module));
 })

@@ -75,7 +75,8 @@ class Build {
    */
   build(target) {
     const childProcess = spawn('yarn', ['build'], {
-      cwd: target
+      cwd: target,
+      shell: true,
     });
 
     childProcess.stdout.pipe(process.stdout);

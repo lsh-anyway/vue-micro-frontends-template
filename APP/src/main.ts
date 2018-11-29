@@ -11,13 +11,19 @@ const register = new Register();
 window.router = router;
 window.store = store;
 
-router.beforeEach((to, from, next) => {
-  register.get(to);
-  next();
+router.beforeEach(async (to, from, next) => {
+  const { path } = to;
+  const module = path.split('/')[1];
+  if (register.modules.has(module)) {
+    next();
+  } else {
+    await register.get(module);
+    router.push(path);
+  }
 });
 
 new Vue({
-    router,
-    store,
-    render: (h) => h(App),
+  router,
+  store,
+  render: (h) => h(App),
 }).$mount('#app');

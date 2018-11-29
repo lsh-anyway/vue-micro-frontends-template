@@ -73,7 +73,8 @@ class Serve {
    */
   serve(target) {
     const childProcess = spawn('yarn', ['serve'], {
-      cwd: target
+      cwd: target,
+      shell: true,
     });
 
     childProcess.stdout.pipe(process.stdout);
