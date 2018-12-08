@@ -18,7 +18,10 @@ router.beforeEach(async (to, from, next) => {
     next();
   } else {
     await register.get(module);
-    router.push(path);
+    next({
+      path,
+      replace: true,
+    });
   }
 });
 
