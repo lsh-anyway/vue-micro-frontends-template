@@ -1,1 +1,1 @@
-{"123":{"name":"123","port":7050},"1234":{"name":"1234","port":7060},"next":7070,"subpage":{"name":"subpage","port":7000},"主模块":{"name":"APP","port":8000},"new":{"name":"new","port":7010}}
+{"next":7080,"subpage":{"name":"subpage","port":7000},"主模块":{"name":"APP","port":8000},"new":{"name":"new","port":7010}}

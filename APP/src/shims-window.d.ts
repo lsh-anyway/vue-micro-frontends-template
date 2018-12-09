@@ -4,6 +4,6 @@ import {Store} from "vuex";
 declare global {
     interface Window {
         router: VueRouter;
-        store: Store<{}>;
+        store: Store<object>;
     }
 }

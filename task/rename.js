@@ -35,16 +35,16 @@ class Rename {
         module,
         name
       } = answers;
-      const oldPath = resolve('modules', module);
-      const newPath = resolve('modules', name);
+      const oldPath = resolve('../modules', module);
+      const newPath = resolve('../modules', name);
       modules[`${name}`] = modules[`${module}`];
       modules[`${name}`].name = name;
       delete modules[module];
       proxy[`/${name}`] = proxy[`/${module}`];
       delete proxy[`/${module}`];
-      fs.writeFileSync(resolve('config', 'modules.json'), JSON.stringify(modules));
-      fs.writeFileSync(resolve('config', 'proxy.json'), JSON.stringify(proxy));
-      fs.writeFileSync(resolve('modules', module.toString(), 'config.json'), JSON.stringify(modules[`${name}`]));
+      fs.writeFileSync(resolve('../config', 'modules.json'), JSON.stringify(modules));
+      fs.writeFileSync(resolve('../config', 'proxy.json'), JSON.stringify(proxy));
+      fs.writeFileSync(resolve('../modules', module.toString(), 'config.json'), JSON.stringify(modules[`${name}`]));
       this.rename(oldPath, newPath);
       console.log('重命名完成');
     })

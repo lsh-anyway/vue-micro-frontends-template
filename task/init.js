@@ -13,17 +13,7 @@ const install = (name, target) => {
   const process = spawn('cnpm', ['i'], {
     cwd: target,
     shell: true,
-  });
-  process.stdout.on('data', (data) => {
-    console.log(`${name}-stdout: ${data}`);
-  });
-
-  process.stderr.on('data', (data) => {
-    console.log(`${name}-stderr: ${data}`);
-  });
-
-  process.on('${name}-close', (code) => {
-    console.log(`子进程退出码：${code}`);
+    stdio: 'inherit'
   });
 };
 

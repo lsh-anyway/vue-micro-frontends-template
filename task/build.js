@@ -37,9 +37,9 @@ class Build {
       } else {
         modules.forEach(module => {
           if (module === '主模块') {
-            this.build(resolve('APP'))
+            this.build(resolve('../APP'))
           } else {
-            this.build(resolve('modules', module))
+            this.build(resolve('../modules', module))
           }
         });
       }
@@ -77,12 +77,7 @@ class Build {
     const childProcess = spawn('yarn', ['build'], {
       cwd: target,
       shell: true,
-    });
-
-    childProcess.stdout.pipe(process.stdout);
-    childProcess.stderr.pipe(process.stderr);
-    childProcess.on(`close`, (code) => {
-      console.log(`子进程退出码：${code}`);
+        stdio: 'inherit'
     });
   };
 }

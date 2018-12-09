@@ -50,15 +50,16 @@ class Generate {
             proxy[`/${name}`] = {
                 target: `http://localhost:${port}`,
             };
-            this.copy(resolve('template'), resolve('modules', name.toString()));
-            fs.writeFileSync(resolve('config', 'modules.json'), JSON.stringify(modules));
-            fs.writeFileSync(resolve('config', 'proxy.json'), JSON.stringify(proxy));
-            fs.writeFileSync(resolve('modules', name.toString(), 'config.json'), JSON.stringify(module));
+            this.copy(resolve('../template'), resolve('../modules', name.toString()));
+            fs.writeFileSync(resolve('../config', 'modules.json'), JSON.stringify(modules));
+            fs.writeFileSync(resolve('../config', 'proxy.json'), JSON.stringify(proxy));
+            fs.writeFileSync(resolve('../modules', name.toString(), 'config.json'), JSON.stringify(module));
             console.log(`已创建模块${name}`);
             console.log(`正在安装模块${name}依赖`);
             child_process.spawn('cnpm', ['i'], {
-                cwd: resolve('modules', name.toString()),
+                cwd: resolve('../modules', name.toString()),
                 shell: true,
+                stdio: 'inherit'
             });
         })
     };

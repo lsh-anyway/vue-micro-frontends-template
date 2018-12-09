@@ -38,9 +38,9 @@ class Remove {
       console.log(`开始删除模块${module}`);
       delete modules[module];
       delete proxy[`/${module}`];
-      this.remove(resolve('modules', module.toString()));
-      fs.writeFileSync(resolve('config', 'modules.json'), JSON.stringify(modules));
-      fs.writeFileSync(resolve('config', 'proxy.json'), JSON.stringify(proxy));
+      this.remove(resolve('../modules', module.toString()));
+      fs.writeFileSync(resolve('../config', 'modules.json'), JSON.stringify(modules));
+      fs.writeFileSync(resolve('../config', 'proxy.json'), JSON.stringify(proxy));
       console.log(`已删除模块${module}`);
     })
   };
@@ -51,7 +51,7 @@ class Remove {
     const opts = [];
     for (const name in modules) {
       if (name === 'next') continue;
-      if (name === '主项目') continue;
+      if (name === '主模块') continue;
       if (modules.hasOwnProperty(name)) {
         const module = modules[name];
         const useable = await probe(module.port);
